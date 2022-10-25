@@ -4,7 +4,7 @@
 var btnTranslate = document.querySelector('#btn-translate');
 var txtInput = document.querySelector("#txt-input");
 var outputDiv = document.querySelector("#output");
-var servelUrl = "https://api.funtranslations.com/translate/ferb-latin.json"
+var servelUrl = "https://api.funtranslations.com/translate/minion.json"
 
 //convert url by appending key and value to the url
 function getTranslationUrl(text) {
@@ -25,9 +25,8 @@ function clickHandler() {
     //calling server for response
     fetch(getTranslationUrl(inputText))
         .then(response => response.json())
-        .then(json => {
-            var translatedText = json.contents.translation;
-            console.log(translatedText);
+        .then(translation => {
+            var translatedText = translation.contents.translated;
             outputDiv.innerText = translatedText;
         })
         .catch(errorHandler);
