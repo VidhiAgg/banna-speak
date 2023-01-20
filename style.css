@@ -58,7 +58,11 @@ footer {
     text-align: center;
 }
 footer p {
-    max-width: var(--max-width);
+    /* max-width: var(--max-width); */
+    width: 90%;
+    padding-right: 1rem;
+    padding-left: 1rem;
     margin: auto;
+    height: 3rem;
     
 }
